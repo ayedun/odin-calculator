@@ -28,20 +28,20 @@ body {
 .display {
   width: fit-content;
   height: fit-content;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   flex: 1;
   margin-top: 10px;
   margin-bottom: 5px;
+  background-color: aliceblue;
 }
 
 .display {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.display p {
   border: 1px solid black;
+  padding: 10px;
 }
 
 .display #top-display {
@@ -89,4 +89,9 @@ body {
   margin: 6px;
   font-size: large;
   font-weight: 600;
+}
+
+button:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
 }

@@ -1,6 +1,7 @@
 let input1 = null;
 let input2 = null;
 let operation = "";
+let currentOperation = "first input";
 // let result = operate(input1, input2);
 let result = 0;
 let equalButton = document.querySelector("#equal");
@@ -20,6 +21,7 @@ let preinput2 = "";
 console.log("hi");
 
 function printOperate() {
+  currentOperation = "print result";
   input2 = parseInt(preinput2);
   result = operate();
   console.log(result);
@@ -29,6 +31,7 @@ function printOperate() {
   preinput2 = "";
   input1 = null;
   input2 = null;
+  currentOperation = "first input";
 }
 
 function operate() {
@@ -89,7 +92,10 @@ function inputNum(e) {
     botDisplay.innerHTML = preinput1;
     console.log(preinput1);
   } else {
+    currentOperation = "second input";
+
     preinput2 += e.target.innerText;
+
     // preinput1 = `${currentinputNum.}`
     botDisplay.innerHTML = preinput2;
     console.log(preinput2);
@@ -111,4 +117,14 @@ function reset() {
   botDisplay.innerHTML = "";
 }
 
+function backspace() {
+  if (currentOperation == "first input") {
+    preinput1 = preinput1.slice(0, -1);
+    botDisplay.innerHTML = preinput1;
+  }
+  if (currentOperation == "second input") {
+    preinput2 = preinput2.slice(0, -1);
+    botDisplay.innerHTML = preinput2;
+  }
+}
 console.log(equalButton);
